@@ -6590,7 +6590,7 @@ button.item.item-button-right {
   overflow: hidden;
   margin: 20px 10px;
   border-radius: 2px;
-  }
+  background-color: #fff; }
 
 .card {
   padding-top: 1px;
@@ -9749,3 +9749,15 @@ ion-view[view-title] {
   position: absolute;
   bottom: 20%;
   background-color: #461255; }
+
+.challengeButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.challengeButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
