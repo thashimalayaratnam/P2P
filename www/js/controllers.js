@@ -1,5 +1,10 @@
 angular.module('starter.controllers', [])
 
+.controller('LoginCtrl', function($scope, $location){
+    $scope.go = function(hash){
+        $location.path(hash)
+    }
+})
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
