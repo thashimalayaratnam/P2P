@@ -57,6 +57,24 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
     })
 
+    .state('app.overview',{
+        url: '/overview',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/overview.html'
+                }
+        }
+    })
+
+    .state('app.invite',{
+        url: '/invite',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/invite.html'
+                }
+            }
+    })
+
     .state('app.browse', {
         url: '/browse',
             views: {
