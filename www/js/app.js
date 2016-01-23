@@ -26,57 +26,58 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   $stateProvider
 
     .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
-  })
+        url: '/app',
+        abstract: true,
+        templateUrl: 'templates/menu.html',
+        controller: 'AppCtrl'
+    })
 
-        .state('app.dashboard', {
-            url: '/dashboard',
+    .state('app.dashboard', {
+        url: '/dashboard',
             views: {
-                'menuContent': {
-                    templateUrl: 'templates/dashboard.html'
-                }
+            'menuContent': {
+                templateUrl: 'templates/dashboard.html'
             }
-        })
-
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
-
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
         }
-      }
     })
+
+    .state('app.trending', {
+        url: '/trending',
+            views: {
+            'menuContent': {
+                templateUrl: 'templates/trending.html'
+            }
+        }
+    })
+
+    .state('app.browse', {
+        url: '/browse',
+            views: {
+            'menuContent': {
+                templateUrl: 'templates/browse.html'
+            }
+        }
+    })
+
     .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+        url: '/playlists',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/playlists.html',
+                controller: 'PlaylistsCtrl'
         }
-      }
+        }
     })
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
+    .state('app.single', {
+        url: '/playlists/:playlistId',
+            views: {
+            'menuContent': {
+                templateUrl: 'templates/playlist.html',
+                controller: 'PlaylistCtrl'
+            }
     }
-  });
+    });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 });
