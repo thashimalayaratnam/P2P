@@ -13,5 +13,6 @@ background: linear-gradient(to top, #C04848 , #480048); /* W3C, IE 10+/ Edge, Fi
 .button.button-dark{
 	position: absolute;
 	bottom: 20%;
+	left: 15%;
 	background-color: #461255
 }
