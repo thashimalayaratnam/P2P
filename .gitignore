@@ -4,3 +4,6 @@
 node_modules/
 platforms/
 plugins/
+
+# project meta files
+/p2p.sublime*
