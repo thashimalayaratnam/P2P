@@ -1,5 +1,54 @@
 <ion-view view-title="Dashboard">
   <ion-content>
-    <h1>Dashboard</h1>
+    <!-- buddy scores -->
+    <div class="list card">
+      <div class="item item-divider">
+        Your Buddies
+      </div>
+      <a href="#" class="item item-icon-left">
+        Thas [points] [==============]
+      </a>
+
+      <a href="#" class="item item-icon-left">
+        Arjun [points] [==============]
+      </a>
+    </div>
+
+    <!-- Calendar -->
+    <div class="card">
+      <div class="item item-divider">
+        This Week
+      </div>
+      <div class="item item-text-wrap">
+        date date date date date date date
+      </div>
+    </div>
+
+    <!-- Tasks -->
+    <div class="list card">
+      <div class="item item-divider">
+        Today's Tasks
+      </div>
+      <ion-list>
+        <ion-checkbox ng-model="filter.yellow"> Do 30 Push-ups </ion-checkbox>
+        <ion-checkbox ng-model="filter.red"> Run 30 minutes </ion-checkbox>
+      </ion-list>
+    </div>
+
+    <!-- Current Streak -->
+    <div class="card">
+      <div class="item item-divider">
+        Current Streak
+      </div>
+      <div class="item item-text-word-wrap">
+        <h1> 2 days </h1>
+      </div>
+    </div>
+    
+    <!-- taunt -->
+    <button class="button button-block button-assertive">
+      Taunt!
+    </button>
+    
   </ion-content>
 </ion-view>
