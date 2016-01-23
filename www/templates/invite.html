@@ -1,12 +1,12 @@
 <ion-view view-title="New Goal">
   <ion-content>
 
-    <div class="card">
-        <div class="item item-divider"
-            <a href="#" ng-click="addTextField()"class="item item-icon-right">
-                <i class="ion-plus item-icon-right"></i>
-                Invite Buddies
-            </a>
+    <div class="list">
+        <div class="item item-button-right">
+            Invite Buddies
+             <button class="button button-positive" ng-click="addTextField()">
+                <i class="ion-plus"></i>
+             </button>
         </div>
     </div>
 
@@ -15,6 +15,13 @@
         <span class="input-label"> Challenger E-mail</span>
         <input type="text" placeholder="Challenger E-mail" ng-click="field.name">
       </label>
+    </div>
+
+    <!-- temporary style -->
+    <div class="challengeButton">
+        <button class="button button-positive"> 
+            Challenge!
+        </button>
     </div>
 
   </ion-content>

@@ -3,10 +3,17 @@
 /* Applies to each ion-view */
 ion-view[view-title]  {
 
+<<<<<<< HEAD
 background: #C04848; /* fallback for old browsers */
 background: -webkit-linear-gradient(to top, #C04848 , #480048); /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to top, #C04848 , #480048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
  
+=======
+  font-family: Georgia;
+  background: #C04848; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #C04848 , #480048); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #C04848 , #480048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+>>>>>>> bcbe529f0f53cbef57855287dd7c75250aaa4163
 }
 
 .button.button-dark{
@@ -98,6 +105,7 @@ div.item-divider {
 
 }
 
+<<<<<<< HEAD
 
 
 
@@ -112,4 +120,11 @@ div.item-divider {
     font-weight: normal;
     font-style: normal;
 
+=======
+.challengeButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+>>>>>>> bcbe529f0f53cbef57855287dd7c75250aaa4163
 }

@@ -48,9 +48,9 @@ angular.module('starter.controllers', [])
     $scope.fields = [{'id': 'name1'}];
 
     $scope.addTextField = function() {
-        if(scope.fields.length != 4){
+        if($scope.fields.length !== 3){
             var newItem = $scope.fields.length + 1;
-            $scope.fields.push({'id':'name'+newItem})
+            $scope.fields.push({'id':'name'+newItem});
         }
     };
 })

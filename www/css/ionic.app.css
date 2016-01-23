@@ -9747,6 +9747,7 @@ ion-view[view-title] {
   left: 15%;
   background-color: #461255; }
 
+<<<<<<< HEAD
 .lightning-image {
   position: absolute;
   left: 20%;
@@ -9795,3 +9796,16 @@ div.item-divider {
   src: url("firasans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("firasans-regular-webfont.woff2") format("woff2"), url("firasans-regular-webfont.woff") format("woff"), url("firasans-regular-webfont.ttf") format("truetype"), url("firasans-regular-webfont.svg#fira_sansregular") format("svg");
   font-weight: normal;
   font-style: normal; }
+=======
+.challengeButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.challengeButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+>>>>>>> bcbe529f0f53cbef57855287dd7c75250aaa4163
