@@ -1,4 +1,4 @@
-<ion-view view-title="Challenge Overview">
+<ion-view view-title="Challenge Overview" ng-model="overview">
       <ion-content class="padding">
         <span class="chlg-difficulty">
           <i class="ion-ios-bolt"></i>
@@ -6,12 +6,12 @@
         </span>
         
         <p class="chlg-heading">
-          Workout Plan
+          {{ overview.name }}
         </p>
         
         <p class="chlg-subheading">
           <span class="subheading-item">
-            <i class="icon ion-android-time"></i> two weeks
+            <i class="icon ion-android-time"></i> {{ overview.duration }}
           </span>
           <span class="subheading-item">
             <i class="icon ion-pricetag"></i> fitness
@@ -20,7 +20,7 @@
         
         <p class="chlg-subheading">
           <span class="subheading-item">
-            <i class="icon ion-ios-people"></i> 309 challengers, including <u>50 Cent</u>, <u>Kanye West</u> and <u>Jay Z</u>
+            <i class="icon ion-ios-people"></i> {{ overview.completed }} challengers, including <u>50 Cent</u>, <u>Kanye West</u> and <u>Jay Z</u>
           </span>
         </p>
         
@@ -30,44 +30,15 @@
             Tasks (Days)
           </div>
       
-          <div class="item item-icon-left item-date item-compact">
-            <i class="icon date right-bar">01</i>
+          <div class="item item-icon-left item-date item-compact" ng-repeat="task in overview.tasks">
+            <div ng-repeat="(key, value) in task">
+            <i class="icon date right-bar">{{ key }}</i>
             <ul>
-              <li class="item">Walk 30 minutes</li>
+              <li class="item">{{ value }}</li>
             </ul>
+            </div>
           </div>
         
-          <div class="item item-icon-left item-date item-compact">
-            <i class="icon date right-bar">02</i>
-            <ul>
-              <li class="item">Walk 15 minutes</li>
-              <li class="item">Look yourself in the mirror</li>
-            </ul>
-          </div>
-          
-          <div class="item item-icon-left item-date item-compact">
-            <i class="icon date right-bar">03</i>
-            <ul>
-              <li class="item">Do 30 push ups</li>
-            </ul>
-          </div>
-          
-          <div class="item item-icon-left item-date item-compact">
-            <i class="icon date right-bar">04</i>
-            <ul>
-              <li class="item">Walk 45 minutes</li>
-            </ul>
-          </div>
-          
-          <div class="item item-icon-left item-date item-compact">
-            <i class="icon date right-bar">05</i>
-            <ul>
-              <li class="item">Run 30 minutes</li>
-              <li class="item">Walk 15 minutes</li>
-            </ul>
-          </div>
-          
-        </div>
         <button class="button button-block taunt" ng-click="go('/app/invite')">
           Accept!
         </button>

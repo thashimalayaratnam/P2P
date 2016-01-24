@@ -5,7 +5,7 @@ angular.module('starter.controllers', ['Tek.progressBar', 'util.firebase.client'
         $location.path(hash)
     }
 })
-.controller('AppCtrl', ["$scope", "$timeout", "$location", "FirebaseClient", function($scope, $timeout, $location, FirebaseClient) {
+    .controller('AppCtrl', ["$scope", "$timeout", "$location", "$state", "FirebaseClient", function($scope, $timeout, $location, $state, FirebaseClient) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -29,15 +29,61 @@ angular.module('starter.controllers', ['Tek.progressBar', 'util.firebase.client'
       {name: 'Do 100 burpees in 5 Weeks', people: '673'}
   ];
 
+    // ---
     FirebaseClient.getChallenges(function(challenges){
         for (var key in challenges) {
             var _name = challenges[key].name;
             var _completed = challenges[key].completed;
+            var _key = key;
 
-            $scope.trending.push({name: _name, people: _completed});
+            $scope.trending.push({name: _name, people: _completed, key: _key});
         }
     });
+    $scope.passer = function (challengeId) {
+        FirebaseClient.getChallenge(challengeId, function(challenge){
+            _tasks = []
+            var i = 0;
+            challenge.tasks.forEach(function (e) {
+                e.forEach(function (task) {
+                    i += 1;
+                    _i = "0" + i;
+                    _task = {}
+                    _task[_i] = task;
+                    console.log(_task);
+                    _tasks.push(_task);
+                });
+            });
+            $scope.overview = {
+                name: challenge.name,
+                completed: challenge.completed,
+                duration: challenge.duration_str,
+                tasks: _tasks
+            };
+        });
+        $state.go('app.overview');
+    }
 
+    /* FirebaseClient.getChallenge(passer, function(challenge){
+        _tasks = []
+        var i = 0;
+        challenge.tasks.forEach(function (e) {
+            e.forEach(function (task) {
+                i += 1;
+                _i = "0" + i;
+                _task = {}
+                _task[_i] = task;
+                console.log(_task);
+                _tasks.push(_task);
+            });
+        });
+        $scope.overview = {
+            name: challenge.name,
+            completed: challenge.completed,
+            duration: challenge.duration_str,
+            tasks: _tasks
+        };
+    });
+*/ 
   $scope.users = [
       {name: 'Jeel', point: '1578', value: '100'},
       {name: 'Thas', point: '999', value: '70'}

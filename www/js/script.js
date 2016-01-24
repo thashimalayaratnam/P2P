@@ -102,6 +102,7 @@ angular.module('util.firebase.client', [])
     });
   };
 
+  // Invite 
   var acceptChallenge = function (progressId, userId) {
     var rootRef = new Firebase(URL);
     var progressesRef = rootRef.child('progresses');

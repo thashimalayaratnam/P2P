@@ -5,7 +5,7 @@
         <input type="text" placeholder="Search" ng-model="search">
     </label>
     <ul class="list">
-        <li class="item item-icon-right" ng-repeat="trend in trending | filter:search | orderBy:'trend.people'">
+        <li class="item item-icon-right" ng-repeat="trend in trending | filter:search | orderBy:'trend.people'" ng-click="passer(trend.key);">
             {{trend.name}}
         <i class="icon ion-ios-people">
             {{trend.people}}
