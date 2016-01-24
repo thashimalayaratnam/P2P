@@ -17,12 +17,17 @@ button.taunt {
 
     background-color: transparent;
     border-radius: 5px;
+    font-size: 20px;
+    color: white;
 
     &:after {
         display: none !important;
+        color: white !important;
     }
 
     &:before {
+        font-size: 15px;
+        color: white;
         border-radius: 5px;
         content: "";
         position: absolute;

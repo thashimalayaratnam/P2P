@@ -1,11 +1,11 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['Tek.progressBar'])
 
 .controller('LoginCtrl', function($scope, $location){
     $scope.go = function(hash){
         $location.path(hash)
     }
 })
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, progressBarManager) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -18,10 +18,13 @@ angular.module('starter.controllers', [])
   $scope.loginData = {};
 
   $scope.users = [
-      {name: 'Jeel', point: '1578'},
-      {name: 'Thas', point: '999'}
+      {name: 'Jeel', point: '1578', value: '90'},
+      {name: 'Thas', point: '999', value: '70'}
   ];
 
+    $scope.main = this;
+    $scope.main.bar = progressBarManager();
+    $scope.main.bar1ProgressVal = 20;
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {

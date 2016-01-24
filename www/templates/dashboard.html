@@ -6,8 +6,9 @@
         Your Buddies
       </div>
 
-      <a href="#" data-ng-repeat="user in users" class="item item-icon-left">
-        {{user['name']}} {{user['point']}} <i class="ion-ios-bolt"></i>
+      <a href="#" class="item item-icon-left" data-ng-repeat="user in users">
+          {{user['name']}} {{user['point']}} 
+          <progress value="{{user['value']}}" max="100"></progress>
       </a>
 
     </div>

@@ -9744,10 +9744,15 @@ ion-side-menus {
 
 button.taunt {
   background-color: transparent;
-  border-radius: 5px; }
+  border-radius: 5px;
+  font-size: 20px;
+  color: white; }
   button.taunt:after {
-    display: none !important; }
+    display: none !important;
+    color: white !important; }
   button.taunt:before {
+    font-size: 15px;
+    color: white;
     border-radius: 5px;
     content: "";
     position: absolute;
