@@ -6,10 +6,13 @@
         Your Buddies
       </div>
 
-      <a href="#" data-ng-repeat="user in users" class="item item-icon-left">
-        {{user['name']}} {{user['point']}} <i class="ion-ios-bolt"></i>
-      </a>
-
+        <a href="#" data-ng-repeat="user in users" class="item item-icon-left" style="padding-left: 16px">
+             <div class="row">
+          <div class="col col-20">{{user['name']}}</div>
+          <div class="col col-70">  <progress max="100" value="80" class="html5"></progress></div>
+          <div class="col col-10">{{user['point']}} </div>
+            </div>
+        </a>
     </div>
 
     <!-- Shit to fix
