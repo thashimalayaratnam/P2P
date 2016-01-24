@@ -5,13 +5,11 @@
       <div class="item item-divider">
         Your Buddies
       </div>
-      <a href="#" class="item item-icon-left">
-        Thas [points] [==============]
+
+      <a href="#" data-ng-repeat="user in users" class="item item-icon-left">
+        {{user['name']}} {{user['point']}} [=======]
       </a>
 
-      <a href="#" class="item item-icon-left">
-        Arjun [points] [==============]
-      </a>
     </div>
 
     <!-- Shit to fix
@@ -21,7 +19,7 @@
 
       -->
     
-    <!-- Current Streak -->
+     <!-- Current Streak -->
     <div class="card">
       <div class="item item-divider">
         Current Streak

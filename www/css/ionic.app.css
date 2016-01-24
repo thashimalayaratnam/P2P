@@ -9740,6 +9740,9 @@ ion-view[view-title] {
 ion-content {
   overflow-y: hidden !important; }
 
+ion-side-menus {
+  background-color: black; }
+
 button.taunt {
   background-color: transparent;
   border-radius: 5px; }
@@ -9797,6 +9800,12 @@ div.item-divider {
   font-weight: normal;
   font-style: normal; }
 
+.challengeButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
 @font-face {
   font-family: 'fira_sansmedium';
   src: url("firasans-medium-webfont.eot");
@@ -9811,11 +9820,38 @@ div.item-divider {
   font-weight: normal;
   font-style: normal; }
 
-.challengeButton {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; }
+.sidebar {
+  background-color: #3f4041 !important;
+  /* This sets the background color*/ }
+
+/*Set the background to transparent for ion-item*/
+.sidebar .item {
+  background-color: transparent;
+  border: none;
+  /*Removes all borders*/
+  border-top: 1px solid;
+  /*Top Border for each menu item*/
+  border-bottom: 2px solid;
+  /*Bottom border for each menu item*/
+  border-color: #666;
+  /*Sets colors for top and bottom border*/
+  color: white;
+  /*Text color for each item*/ }
+
+/*Changes the border for the last item*/
+.sidebar .item:last-child {
+  border-bottom: 1px solid #666; }
+
+.sidebar .item-complex .item-content, .dark .item-radio .item-content {
+  background-color: transparent; }
+
+/*Just makes the type white*/
+.sidebar h2,
+.sidebar h3,
+.sidebar p,
+.sidebar a {
+  color: white;
+  /*Text color for each item, overrides the color property above*/ }
 
 .challengeButton {
   display: flex;
