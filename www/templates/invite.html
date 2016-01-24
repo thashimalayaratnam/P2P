@@ -1,16 +1,16 @@
-<ion-view view-title="New Goal">
+<ion-view view-title="New Challenge">
   <ion-content>
 
     <div class="list">
         <div class="item item-button-right">
-            Invite Buddies
-             <button class="button button-positive" ng-click="addTextField()">
+            Challenge Buddies
+             <button class="button button-positive "style="background-color: #2DA55C" ng-click="addTextField()">
                 <i class="ion-plus"></i>
              </button>
         </div>
     </div>
 
-    <div class="list">
+    <div class="list" style="margin-top: 60px   ">
       <label data-ng-repeat="field in fields" class="item item-input item-floating-label">
         <span class="input-label"> Challenger E-mail</span>
         <input class="white-text" type="text" placeholder="Challenger E-mail" ng-click="field.name">
@@ -19,7 +19,7 @@
 
     <!-- temporary style -->
     <div class="challengeButton">
-        <button class="button button-positive" ng-click="go('app/dashboard')"> 
+        <button class="button button-positive button-large" style="background-color: #2DA55C" ng-click="go('app/dashboard')"> 
             Challenge!
         </button>
     </div>
