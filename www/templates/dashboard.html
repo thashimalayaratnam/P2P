@@ -6,11 +6,21 @@
         Your Buddies
       </div>
 
+<<<<<<< HEAD
+        <a href="#" data-ng-repeat="user in users" class="item item-icon-left" style="padding-left: 16px">
+             <div class="row">
+          <div class="col col-20">{{user['name']}}</div>
+          <div class="col col-70">  <progress max="100" value="80" class="html5"></progress></div>
+          <div class="col col-10">{{user['point']}} </div>
+            </div>
+        </a>
+=======
       <a href="#" class="item item-icon-left" data-ng-repeat="user in users">
           {{user['name']}} {{user['point']}} 
           <progress value="{{user['value']}}" max="100"></progress>
       </a>
 
+>>>>>>> cf3589649aeee6362d8dae8fe42db5c7942509eb
     </div>
 
     <!-- Shit to fix
