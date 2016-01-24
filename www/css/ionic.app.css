@@ -9733,11 +9733,8 @@ a.button {
 
 /* Empty. Add your own CSS if you like */
 /* Applies to each ion-view */
-ion-view[view-title] {
+ion-view[view-title], ion-pane {
   background-image: url("../img/restaurant.png"); }
-
-ion-content {
-  overflow-y: hidden !important; }
 
 ion-side-menus {
   background-color: black; }
@@ -9773,6 +9770,15 @@ button.taunt {
   position: absolute;
   left: 20%;
   top: 10%; }
+
+.input-label {
+  color: white; }
+
+input[type="text"] {
+  color: white !important;
+  font-size: 14px !important; }
+  input[type="text"]:focus {
+    color: white !important; }
 
 /*Dashboard headers */
 div.item-divider {
@@ -9906,17 +9912,17 @@ i.ion-ios-bolt {
   margin-top: 5px;
   margin-bottom: 10px;
   padding: 5px;
-  color: #333; }
+  color: white; }
 
 .chlg-difficulty {
   float: right;
   font-size: 32px;
-  color: #333; }
+  color: white; }
 
 .chlg-subheading {
   font-size: 15px;
   margin-bottom: 3px;
-  color: #666; }
+  color: white; }
 
 .chlg-subheading i {
   font-size: 18px;
