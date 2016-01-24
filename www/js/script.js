@@ -41,6 +41,7 @@ angular.module('util.firebase.client', [])
   };
 
   // not hook
+  // trending view, browsing view
   var getChallenges = function (callback) {
     var rootRef = new Firebase(URL);
     var challengesRef = rootRef.child('challenges');
@@ -51,6 +52,7 @@ angular.module('util.firebase.client', [])
   };
 
   // hook
+  // overview view
   var getChallenge = function (challengeId, callback) {
     var rootRef = new Firebase(URL);
     var challengesRef = rootRef.child('challenges');

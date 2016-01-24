@@ -25,12 +25,21 @@ angular.module('starter.controllers', ['Tek.progressBar', 'util.firebase.client'
 
   $scope.trending = [
       {name: 'Lose 5 pounds in 2 Weeks', people: '151'},
-      {name: 'Do 100 Push-ups in 4 Weeks', people: '131'},
-      {name: 'Do 100 burpess in 5 Weeks', people: '673'}
+      {name: 'Do 100 push-ups in 4 Weeks', people: '131'},
+      {name: 'Do 100 burpees in 5 Weeks', people: '673'}
   ];
 
+    FirebaseClient.getChallenges(function(challenges){
+        for (var key in challenges) {
+            var _name = challenges[key].name;
+            var _completed = challenges[key].completed;
+
+            $scope.trending.push({name: _name, people: _completed});
+        }
+    });
+
   $scope.users = [
-      {name: 'Jeel', point: '1578', value: '90'},
+      {name: 'Jeel', point: '1578', value: '100'},
       {name: 'Thas', point: '999', value: '70'}
   ];
 

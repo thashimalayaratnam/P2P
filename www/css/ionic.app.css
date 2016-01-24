@@ -9767,7 +9767,10 @@ button.taunt {
   align-items: center; }
 
 .button.button-dark {
-  background-color: #461255; }
+  background-color: #3B5998; }
+
+.dark.active {
+  background-color: #3B5998; }
 
 .input-label {
   color: white; }
