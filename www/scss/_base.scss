@@ -1,12 +1,8 @@
 /* Empty. Add your own CSS if you like */
 
 /* Applies to each ion-view */
-ion-view[view-title]  {
+ion-view[view-title], ion-pane  {
     background-image: url("../img/restaurant.png");
-}
-
-ion-content {
-    overflow-y: hidden !important;
 }
 
 ion-side-menus {
@@ -17,12 +13,17 @@ button.taunt {
 
     background-color: transparent;
     border-radius: 5px;
+    font-size: 20px;
+    color: white;
 
     &:after {
         display: none !important;
+        color: white !important;
     }
 
     &:before {
+        font-size: 15px;
+        color: white;
         border-radius: 5px;
         content: "";
         position: absolute;
@@ -55,7 +56,24 @@ s	bottom: 20%;
 	left: 20%;
 	top: 10%;
 }
+<<<<<<< HEAD
 */
+=======
+
+.input-label {
+    color: white;
+}
+
+input[type="text"]{
+    color: white !important;
+    font-size: 14px !important;
+
+    &:focus {
+        color: white !important;
+    }
+}
+
+>>>>>>> cf3589649aeee6362d8dae8fe42db5c7942509eb
 /*Dashboard headers */
 div.item-divider {
 	font-family: 'fira_sansbold';

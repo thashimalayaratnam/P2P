@@ -1,5 +1,12 @@
 <ion-view view-title="Trending">
   <ion-content>
-    <h1>Trending</h1>
+    <ul class="list">
+      <li class="item item-icon-right" data-ng-repeat="trend in trending" style="padding-bottom: 10px !important;">
+        {{trend['name']}}
+        <i class="icon ion-ios-people">
+          {{trend['people']}}
+        </i>
+      </li>
+    </ul>
   </ion-content>
 </ion-view>

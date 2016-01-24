@@ -13,13 +13,13 @@
     <div class="list">
       <label data-ng-repeat="field in fields" class="item item-input item-floating-label">
         <span class="input-label"> Challenger E-mail</span>
-        <input type="text" placeholder="Challenger E-mail" ng-click="field.name">
+        <input class="input-type" type="text" placeholder="Challenger E-mail" ng-click="field.name">
       </label>
     </div>
 
     <!-- temporary style -->
     <div class="challengeButton">
-        <button class="button button-positive"> 
+        <button class="button button-positive" ng-click="go('app/dashboard')"> 
             Challenge!
         </button>
     </div>
