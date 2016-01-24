@@ -9863,6 +9863,9 @@ div.item-divider {
 .minimize-fonts {
   font-size: 14px; }
 
+i.ion-ios-bolt {
+  font-size: 14px; }
+
 .challengeButton {
   display: flex;
   flex-direction: row;
