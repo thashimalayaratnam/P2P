@@ -45,20 +45,9 @@ button.taunt {
 }
 
 .button.button-dark{
-/*	position: absolute;
-s	bottom: 20%;
-	left: 15%;
-*/	background-color: #461255
+	background-color: #461255
 }
 
-/*.lightning-image {
-	position: absolute;
-	left: 20%;
-	top: 10%;
-}
-<<<<<<< HEAD
-*/
-=======
 
 .input-label {
     color: white;
@@ -73,7 +62,6 @@ input[type="text"]{
     }
 }
 
->>>>>>> cf3589649aeee6362d8dae8fe42db5c7942509eb
 /*Dashboard headers */
 div.item-divider {
 	font-family: 'fira_sansbold';
@@ -140,7 +128,6 @@ progress[value]::-webkit-progress-value {
 /* Let's spice up things little bit by using pseudo elements. */
 
 progress[value]::-webkit-progress-value:after {
-	/* Only webkit/blink browsers understand pseudo elements on pseudo classes. A rare phenomenon! */
 	content: '';
 	position: absolute;
 	color: #8DCCC9;
