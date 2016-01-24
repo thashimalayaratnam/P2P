@@ -1,11 +1,11 @@
-angular.module('starter.controllers', ['Tek.progressBar'])
+angular.module('starter.controllers', ['Tek.progressBar', 'util.firebase.client'])
 
 .controller('LoginCtrl', function($scope, $location){
     $scope.go = function(hash){
         $location.path(hash)
     }
 })
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $location) {
+.controller('AppCtrl', ["$scope", "$timeout", "$location", "FirebaseClient", function($scope, $timeout, $location, FirebaseClient) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -21,6 +21,8 @@ angular.module('starter.controllers', ['Tek.progressBar'])
     $location.path(hash)
   }
 
+  $scope.userId = "thas";
+
   $scope.trending = [
       {name: 'Lose 5 pounds in 2 Weeks', people: '151'},
       {name: 'Do 100 Push-ups in 4 Weeks', people: '131'},
@@ -31,13 +33,6 @@ angular.module('starter.controllers', ['Tek.progressBar'])
       {name: 'Jeel', point: '1578', value: '90'},
       {name: 'Thas', point: '999', value: '70'}
   ];
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
 
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
@@ -68,7 +63,7 @@ angular.module('starter.controllers', ['Tek.progressBar'])
             $scope.fields.push({'id':'name'+newItem});
         }
     };
-})
+}])
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [

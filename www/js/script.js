@@ -1,4 +1,3 @@
-
 angular.module('util.firebase.client', [])
 
 .factory('FirebaseClient', function() {
@@ -190,8 +189,9 @@ angular.module('util.firebase.client', [])
     getProgress: getProgress,
     getChallenges: getChallenges,
     getChallenge: getChallenge,
+    userId: "thas"
   };
-}
+})
 
 
 
