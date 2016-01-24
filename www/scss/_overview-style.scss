@@ -1,0 +1,47 @@
+/* Styles here */
+.item.item-compact {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.item.item-compact .item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.right-bar {
+    border-right: 1px solid #ddd;
+    padding-right: 10px;
+}
+.item-icon-left.item-date {
+    padding-left: 65px;
+}
+.icon.date {
+    font-size: 24px;
+    color: #666;
+    display: block;
+    padding-top: 15px;
+}
+.chlg-heading {
+    font-size: 32px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    color: #333;
+}
+.chlg-difficulty {
+    float: right;
+    font-size: 32px;
+    color: #333;
+}
+.chlg-subheading {
+    font-size: 15px;
+    margin-bottom: 3px;
+    color: #666;
+}
+.chlg-subheading i {
+    font-size: 18px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.chlg-subheading .subheading-item {
+    margin-right: 20px;
+}

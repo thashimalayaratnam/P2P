@@ -9734,12 +9734,27 @@ a.button {
 /* Empty. Add your own CSS if you like */
 /* Applies to each ion-view */
 ion-view[view-title] {
-  background: #C04848;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #C04848, #480048);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #C04848, #480048);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  background: -webkit-linear-gradient(to top, #666666, hsl 0, 0, 60);
+  /* Chrome 10-25, Safari 5.1-6 */ }
+
+ion-content {
+  overflow-y: hidden !important; }
+
+button.taunt {
+  background-color: transparent;
+  border-radius: 5px; }
+  button.taunt:after {
+    display: none !important; }
+  button.taunt:before {
+    border-radius: 5px;
+    content: "";
+    position: absolute;
+    background-color: red;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    right: 8px;
+    left: 8px; }
 
 .button.button-dark {
   position: absolute;
@@ -9747,7 +9762,6 @@ ion-view[view-title] {
   left: 15%;
   background-color: #461255; }
 
-<<<<<<< HEAD
 .lightning-image {
   position: absolute;
   left: 20%;
@@ -9796,7 +9810,7 @@ div.item-divider {
   src: url("firasans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("firasans-regular-webfont.woff2") format("woff2"), url("firasans-regular-webfont.woff") format("woff"), url("firasans-regular-webfont.ttf") format("truetype"), url("firasans-regular-webfont.svg#fira_sansregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-=======
+
 .challengeButton {
   display: flex;
   flex-direction: row;
@@ -9808,4 +9822,50 @@ div.item-divider {
   flex-direction: row;
   justify-content: center;
   align-items: center; }
->>>>>>> bcbe529f0f53cbef57855287dd7c75250aaa4163
+
+/* Styles here */
+.item.item-compact {
+  padding-top: 5px;
+  padding-bottom: 5px; }
+
+.item.item-compact .item {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.right-bar {
+  border-right: 1px solid #ddd;
+  padding-right: 10px; }
+
+.item-icon-left.item-date {
+  padding-left: 65px; }
+
+.icon.date {
+  font-size: 24px;
+  color: #666;
+  display: block;
+  padding-top: 15px; }
+
+.chlg-heading {
+  font-size: 32px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  color: #333; }
+
+.chlg-difficulty {
+  float: right;
+  font-size: 32px;
+  color: #333; }
+
+.chlg-subheading {
+  font-size: 15px;
+  margin-bottom: 3px;
+  color: #666; }
+
+.chlg-subheading i {
+  font-size: 18px;
+  padding-left: 5px;
+  padding-right: 5px; }
+
+.chlg-subheading .subheading-item {
+  margin-right: 20px; }

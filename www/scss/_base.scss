@@ -2,10 +2,34 @@
 
 /* Applies to each ion-view */
 ion-view[view-title]  {
+    background: -webkit-linear-gradient(to top, hsl(0, 0, 40), hsl (0, 0, 60)); /* Chrome 10-25, Safari 5.1-6 */
 
-background: #C04848; /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, #C04848 , #480048); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, #C04848 , #480048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+ion-content {
+    overflow-y: hidden !important;
+}
+
+button.taunt {
+
+    background-color: transparent;
+    border-radius: 5px;
+
+    &:after {
+        display: none !important;
+    }
+
+    &:before {
+        border-radius: 5px;
+        content: "";
+        position: absolute;
+        background-color: red;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        right: 8px;
+        left: 8px;
+    }
 
 }
 
@@ -98,10 +122,6 @@ div.item-divider {
 
 }
 
-<<<<<<< HEAD
-
-
-
 @font-face {
     font-family: 'fira_sansregular';
     src: url('firasans-regular-webfont.eot');
@@ -112,12 +132,11 @@ div.item-divider {
          url('firasans-regular-webfont.svg#fira_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
 
-=======
 .challengeButton {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
->>>>>>> bcbe529f0f53cbef57855287dd7c75250aaa4163
 }
