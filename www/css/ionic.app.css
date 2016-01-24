@@ -9855,6 +9855,16 @@ div.item-divider {
   color: white;
   /*Text color for each item, overrides the color property above*/ }
 
+/* Styles for dashboard */
+.center-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.minimize-fonts {
+  font-size: 14px; }
+
 .challengeButton {
   display: flex;
   flex-direction: row;
