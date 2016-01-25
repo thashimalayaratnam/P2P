@@ -1,3 +1,4 @@
+
 angular.module('util.firebase.client', [])
 
 .factory('FirebaseClient', function() {
@@ -30,6 +31,17 @@ angular.module('util.firebase.client', [])
   };
 
   // hook
+  var getProgressesOfUser = function (userId, callback) {
+    var rootRef = new Firebase(URL);
+    var usersRef = rootRef.child('users');
+    var myUserRef = usersRef.child(userId).child('progresses');
+
+    myUserRef.on('value', function (s) {
+      callback(s.val());
+    });
+  };
+
+  // hook
   var getProgress = function (progressId, callback) {
     var rootRef = new Firebase(URL);
     var progressesRef = rootRef.child('progresses');
@@ -41,7 +53,6 @@ angular.module('util.firebase.client', [])
   };
 
   // not hook
-  // trending view, browsing view
   var getChallenges = function (callback) {
     var rootRef = new Firebase(URL);
     var challengesRef = rootRef.child('challenges');
@@ -52,7 +63,6 @@ angular.module('util.firebase.client', [])
   };
 
   // hook
-  // overview view
   var getChallenge = function (challengeId, callback) {
     var rootRef = new Firebase(URL);
     var challengesRef = rootRef.child('challenges');
@@ -63,7 +73,6 @@ angular.module('util.firebase.client', [])
     });
   };
 
-
   // not hook
   var getChallengeOnce = function (challengeId, callback) {
     var rootRef = new Firebase(URL);
@@ -73,6 +82,11 @@ angular.module('util.firebase.client', [])
     myChallengeRef.once('value', function (s) {
       callback(s.val());
     });
+  };
+
+  var getTodaysTasks = function (startDate, tasks) {
+    var index = daysAgo(startDate);
+    return tasks[index];
   };
 
   var incChallenge = function (challengeId) {
@@ -102,43 +116,53 @@ angular.module('util.firebase.client', [])
     });
   };
 
-  // Invite 
   var acceptChallenge = function (progressId, userId) {
     var rootRef = new Firebase(URL);
     var progressesRef = rootRef.child('progresses');
     var myProgressRef = progressesRef.child(progressId);
+    var myUserRef = myProgressRef.child('users');
 
     getUser(userId, function (user) {
-      myProgressRef.transaction(function (progress) {
-        delete progress.pending[userId];
-        progress.users[userId] = {
-          "current_streak": 0,
-          "last_complete": currDateStr(),
-          "name": user.name,
-          "points": 0
-        };
-      }, function (err, committed, s) {
-        if (err)
-          console.err('Shit happened');
-        else if (committed) {
-          console.log('CHALLENGE ACCEPTED');
-          console.log(s);
-        }
-      });
+      var tempHash = {};
+      tempHash[userId] = {
+        "current_streak": 0,
+        "last_complete": currDateStr(),
+        "name": user.name,
+        "points": 0
+      };
+      myUserRef.update(tempHash);
     });
-  };
 
-  var updateLast = function (userId, progressId) {
-    var rootRef = new Firebase(URL);
-    var myProgressRef = rootRef.child('progresses').child(progressId);
-    myProgressRef.child('users').child(userId).update(
-      {"last_complete": currDateStr()}
-    );
-  }
+    myProgressRef.child('pending').child(userId).remove();
+  };
 
   var rejectChallenge = function (progressId, userId) {
     console.log("don't be stupid");
     acceptChallenge(progressId, userId);
+  };
+
+  var increaseProgress = function(userId, progressId) {
+    var rootRef = new Firebase(URL);
+    var myProgressRef = rootRef.child('progresses').child(progressId);
+    var myUserRef = myProgressRef.child('users').child(userId);
+
+    myUserRef.transaction(function (user) {
+      if (user == null) return 1;
+      if (daysAgo(user.last_complete) < 2) {
+        user.current_streak += 1;
+      } else {
+        user.current_streak = 1;
+      }
+      user.last_complete = currDateStr();
+      return user;
+    }, function (err, committed, s) {
+      if (err)
+        console.err('streak commit error');
+      else if (committed) {
+        console.log("INCREASE IN STREAK! (get fire on these bitches)");
+        console.log(s.val());
+      }
+    });
   };
 
   var createProgress = function (challengeId, challenger, usersArr) {
@@ -180,9 +204,11 @@ angular.module('util.firebase.client', [])
       });
     });
     challengeUsers(newKey, usersArr);
+
+    return newKey;
   };
 
-  var updateProgress = function (challengeId, userId) {
+  var completeProgress = function (progressId) {
 
   };
 
@@ -190,12 +216,15 @@ angular.module('util.firebase.client', [])
   return {
     getUser: getUser,
     getProgress: getProgress,
+    getProgressesOfUser: getProgressesOfUser,
     getChallenges: getChallenges,
     getChallenge: getChallenge,
+    getTodaysTasks: getTodaysTasks,
+    acceptChallenge: acceptChallenge,
+    rejectChallenge: rejectChallenge,
+    increaseProgress: increaseProgress,
+    createProgress: createProgress,
+    incChallenge: incChallenge,
     userId: "thas"
   };
-})
-
-
-
-var userId = "thas";
+});
